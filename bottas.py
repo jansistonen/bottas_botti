@@ -2,7 +2,7 @@ import time
 import random
 import requests
 
-TOKEN = "8463967830:AAGdOz73LAjwJaqFzUPFrqUc77KxXAsshpo"
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 API = f"https://api.telegram.org/bot{TOKEN}"
 
 # Trigger-sanat (pienillä kirjaimilla)
