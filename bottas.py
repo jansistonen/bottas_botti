@@ -5,10 +5,10 @@ import requests
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 API = f"https://api.telegram.org/bot{TOKEN}"
 
-# Trigger-sanat (pienillä kirjaimilla)
+# Trigger-sanat
 TRIGGERS = {"bottas", "valtteri", "viikset", "sauna", "kahvi", "perkele", "spämmi"}
 
-# Lisää tänne Bottas-stickerien file_id:t (yksi riittää alkuun)
+# stickerien file_id:t
 BOTTAS_STICKERS = [
     "CAACAgQAAxkBAAMRaV94KGXhTsLpR5VpmH3AuVSlAlcAApkhAAJ2Z_lSv4pmvbRfGT04BA",
     "CAACAgQAAxkBAAMSaV94KwXnbLARh15tucMoh9m04dUAAg4aAAJAzgFTMSaSVjthd2U4BA",
@@ -17,7 +17,7 @@ BOTTAS_STICKERS = [
     # "PASTE_STICKER_FILE_ID_2",
 ]
 
-# Pieni “anti-ban/anti-ärsytys” rate limit (sekunteina)
+# Pieni “anti-späm” rate limit (sekunteina)
 MIN_SECONDS_BETWEEN_STICKERS = 2.0
 last_sent_at = 0.0
 
@@ -48,11 +48,11 @@ def main():
 
                 chat_id = msg["chat"]["id"]
 
-                # Jos joku lähetti stickerin, tulosta sen file_id -> helpottaa keräämistä
+                # jos joku lähetti stickerin chattiin, tulostetaan sen file_id -> helpottaa keräämistä
                 if "sticker" in msg:
                     st = msg["sticker"]
                     print("Nähty sticker! file_id =", st.get("file_id"))
-                    # Halutessasi voit myös automaattisesti kerätä listaan tietyllä ehdolla
+                    
 
                 text = msg.get("text") or msg.get("caption")
                 if not text:
