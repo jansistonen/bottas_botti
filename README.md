@@ -1,4 +1,5 @@
 # BOTtas
+![Bot avatar](bot1.png)
 
 
 
@@ -10,6 +11,8 @@ trigger-sanoista
 - Lähettää Bottas-stickereitä (file_id)
 - Helppo laajentaa komennoilla
 - Ajettavissa Raspberry Pi:llä
+
+  ![Bot response](bot2.png)
 
 
 ---
