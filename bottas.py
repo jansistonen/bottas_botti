@@ -17,6 +17,16 @@ BOTTAS_STICKERS = [
     # "PASTE_STICKER_FILE_ID_2",
 ]
 
+#slotti stickerien id:t
+SLOT_STICKER = [
+    "CAACAgQAAxkBAAMEaYxm7mc4yvqVVnBihfWFtTQLHUgAAjAaAAJQF2lQzbnDo2lrD-k6BA", #takis
+    "CAACAgQAAxkBAAMFaYxnLAHrPoPfN11zh2Yu2NqiC1UAAhYfAAKhz2FQW2wqdyIfcSs6BA", #mikko
+    "CAACAgQAAxkBAAMGaYxnPnuUSHQgdWsP4PD73AQGfaQAAjcgAAKW92hQG2jkg35ETac6BA", #las palmasi
+    "CAACAgQAAxkBAAMHaYxnxUTxbHYJlml2hB9GMLZ9hXUAAiwjAAIk5GBQtjhtK3aB0U86BA", #poppi
+    "CAACAgQAAxkBAAMIaYxn4M3zNqZMDLZ2Rl85v2GnlfUAAkgaAALLz2FQ6a3ZyqwH_rs6BA", #jetti
+    #lisää id
+]
+
 # Pieni “anti-späm” rate limit (sekunteina)
 MIN_SECONDS_BETWEEN_STICKERS = 2.0
 last_sent_at = 0.0
