@@ -1,3 +1,4 @@
+import os
 import time
 import random
 import requests
@@ -7,6 +8,7 @@ API = f"https://api.telegram.org/bot{TOKEN}"
 
 # Trigger-sanat
 TRIGGERS = {"bottas", "valtteri", "viikset", "sauna", "kahvi", "perkele", "spämmi"}
+TRIGGERS_OTHERS = {"jatkot"}
 
 # stickerien file_id:t
 BOTTAS_STICKERS = [
@@ -41,6 +43,11 @@ def should_trigger(text: str) -> bool:
     # trigger jos mikä tahansa trigger-sana esiintyy tekstissä
     return any(word in t for word in TRIGGERS)
 
+def should_also_trigger(text: str) -> bool:
+    t = (text or "").lower()
+    # trigger jos mikä tahansa trigger-sana esiintyy tekstissä
+    return any(word in t for word in TRIGGERS_OTHERS)
+
 def main():
     global last_sent_at
     offset = None
@@ -74,6 +81,19 @@ def main():
                         continue  # rate limit
 
                     sticker_id = random.choice(BOTTAS_STICKERS)
+                    api("sendSticker", {
+                        "chat_id": chat_id,
+                        "sticker": sticker_id,
+                    })
+                    last_sent_at = now
+                    print("Trigger -> lähetetty sticker chat:", chat_id)
+
+                elif should_also_trigger(text):
+                    now = time.time()
+                    if now - last_sent_at < MIN_SECONDS_BETWEEN_STICKERS:
+                        continue  # rate limit
+
+                    sticker_id = random.choice(SLOT_STICKERS)
                     api("sendSticker", {
                         "chat_id": chat_id,
                         "sticker": sticker_id,
