@@ -8,7 +8,7 @@ API = f"https://api.telegram.org/bot{TOKEN}"
 
 # Trigger-sanat
 TRIGGERS = {"bottas", "valtteri", "viikset", "sauna", "kahvi", "perkele", "spämmi"}
-TRIGGERS_OTHERS = {"jatkot"}
+TRIGGERS_OTHERS = {"jatko"}
 
 # stickerien file_id:t
 BOTTAS_STICKERS = [
