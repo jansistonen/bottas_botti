@@ -18,7 +18,7 @@ BOTTAS_STICKERS = [
 ]
 
 #slotti stickerien id:t
-SLOT_STICKER = [
+SLOT_STICKERS = [
     "CAACAgQAAxkBAAMEaYxm7mc4yvqVVnBihfWFtTQLHUgAAjAaAAJQF2lQzbnDo2lrD-k6BA", #takis
     "CAACAgQAAxkBAAMFaYxnLAHrPoPfN11zh2Yu2NqiC1UAAhYfAAKhz2FQW2wqdyIfcSs6BA", #mikko
     "CAACAgQAAxkBAAMGaYxnPnuUSHQgdWsP4PD73AQGfaQAAjcgAAKW92hQG2jkg35ETac6BA", #las palmasi
